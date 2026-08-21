@@ -159,7 +159,7 @@ export function Navbar({ delay = 0 }: { delay?: number }) {
                           group-hover:opacity-100
                         "
                       >
-                        NexaTech
+                        NexaTech Networks
                       </span>
                     </Link>
                   </div>
