@@ -137,7 +137,7 @@ export const projects: Project[] = [
     title: 'nexatechsanso',
     category: 'E-Commerce',
     year: '2024',
-    image: '/work/nexatech-sanso.png',
+    image: '/work/nexatechsanso.png',
     summary:
       'A premium consumer electronics e-commerce platform specializing in German-engineered wireless audio and power solutions.',
     overview:
