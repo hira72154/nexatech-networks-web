@@ -23,7 +23,7 @@ export const projects: Project[] = [
     title: 'NCDG',
     category: 'Real Estate Management',
     year: '2024',
-    image: '/work/NCDG.png',
+    image: '/work/ncdg.png',
     summary:
       'A centralized real estate and property management platform built to streamline property operations across multiple U.S. states.',
     overview:
@@ -134,7 +134,7 @@ export const projects: Project[] = [
   {
     slug: 'sanso',
     index: '03',
-    title: 'NexaTech-Sanso',
+    title: 'nexatechsanso',
     category: 'E-Commerce',
     year: '2024',
     image: '/work/nexatech-sanso.png',
