@@ -134,10 +134,10 @@ export const projects: Project[] = [
   {
     slug: 'sanso',
     index: '03',
-    title: 'Nexatech-Sanso',
+    title: 'NexaTech-Sanso',
     category: 'E-Commerce',
     year: '2024',
-    image: '/work/nexatech-sanso.png',
+    image: '/work/NexaTech-sanso.png',
     summary:
       'A premium consumer electronics e-commerce platform specializing in German-engineered wireless audio and power solutions.',
     overview:

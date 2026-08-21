@@ -223,9 +223,9 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
                 {/* Top Navigation */}
                 <div className="navlink absolute left-0 right-0 top-0 z-20 flex items-start justify-between px-5 pt-7 lg:px-10 lg:pt-8">
 
-                    {/* Techfexious — Top Left */}
+                    {/* NexaTech Networks — Top Left */}
                     <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-black/50 lg:text-xs">
-                        TECHFEXIOUS
+                        NexaTech Networks
                     </div>
 
                     {/* Close */}

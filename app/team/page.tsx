@@ -184,7 +184,7 @@ export default function TeamPage() {
           {/* LABEL */}
           <Reveal y={30}>
             <p className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-black/50">
-              TechFexious
+              NexaTech Networks
             </p>
           </Reveal>
 
@@ -224,7 +224,7 @@ export default function TeamPage() {
 
           {/* FOOTER */}
           <p className="mt-24 text-xs text-black/40">
-            © {new Date().getFullYear()} TechFexious. All rights reserved.
+            © {new Date().getFullYear()} NexaTech Networks. All rights reserved.
           </p>
 
         </div>

@@ -23,12 +23,12 @@ const instrument = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: 'TECHFEXIOUS — Skill. Solution. Scale.',
+  title: 'NexaTech Networks — Skill. Solution. Scale.',
   description:
-    'TECHFEXIOUS is a premium technology studio building skill into every solution — design, development, AI, cloud and growth.',
+    'NexaTech Networks is a premium technology studio building skill into every solution — design, development, AI, cloud and growth.',
   generator: 'v0.app',
   openGraph: {
-    title: 'TECHFEXIOUS — Skill. Solution. Scale.',
+    title: 'NexaTech Networks — Skill. Solution. Scale.',
     description:
       'A premium technology studio building skill into every solution.',
     type: 'website',

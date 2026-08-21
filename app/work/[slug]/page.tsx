@@ -14,9 +14,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params
   const project = getProject(slug)
-  if (!project) return { title: 'Project not found — TECHFEXIOUS' }
+  if (!project) return { title: 'Project not found — NexaTech Networks' }
   return {
-    title: `${project.title} — TECHFEXIOUS`,
+    title: `${project.title} — NexaTech Networks`,
     description: project.summary,
   }
 }

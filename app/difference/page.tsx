@@ -85,7 +85,7 @@ export default function DifferencePage() {
         </h1>
 
         <p data-fade className="mx-auto mt-10 max-w-2xl text-2xl leading-relaxed font-light" style={{ color: 'var(--color-muted)' }}>
-          Six things that separate TECHFEXIOUS from every other studio you&apos;ve considered.
+          Six things that separate NexaTech Networks from every other studio you&apos;ve considered.
         </p>
 
         {/* Scroll hint */}
@@ -183,7 +183,7 @@ export default function DifferencePage() {
                 We treat your product like it's ours. How we build it reflects who we are.
               </p>
               <p className="mt-5 text-xs font-bold uppercase tracking-[0.35em]" style={{ color: 'rgba(249,92,75,0.7)' }}>
-                — TECHFEXIOUS
+                — NexaTech Networks
               </p>
             </div>
           </div>

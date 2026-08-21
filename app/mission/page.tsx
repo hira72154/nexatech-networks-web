@@ -12,7 +12,7 @@ const cards = [
     n: '01',
     tag: 'Our Purpose',
     title: 'We exist to build things that matter.',
-    body: 'TECHFEXIOUS was founded on a single conviction — skill is the only shortcut that actually works. Every product we ship carries that conviction from the first wireframe to the final deployment. We don\'t build demos. We build systems.',
+    body: 'NexaTech Networks was founded on a single conviction — skill is the only shortcut that actually works. Every product we ship carries that conviction from the first wireframe to the final deployment. We don\'t build demos. We build systems.',
     bg: '#000000',
     textColor: '#F6F4F1',
     accentColor: '#F95C4B',
@@ -226,9 +226,9 @@ export default function MissionPage() {
             {/* Rich text */}
             <div className="flex flex-col gap-8">
               {[
-                'TECHFEXIOUS is a premium technology studio that builds software products with a level of craft you can feel. We design, engineer, and scale solutions for businesses that understand quality is a strategy, not a luxury.',
+                'NexaTech Networks is a premium technology studio that builds software products with a level of craft you can feel. We design, engineer, and scale solutions for businesses that understand quality is a strategy, not a luxury.',
                 'We were founded on a single belief: that building something well the first time is faster than building it twice. That philosophy shapes every engagement — from the way we structure a database to the way we animate a hover state.',
-                'Our team is small by design and deep by necessity. We bring specialists to every layer of a project — not generalists who "can figure it out." When you work with TECHFEXIOUS, you are working with people who have done this before, and done it well.',
+                'Our team is small by design and deep by necessity. We bring specialists to every layer of a project — not generalists who "can figure it out." When you work with NexaTech Networks, you are working with people who have done this before, and done it well.',
                 'We don\'t measure success by hours billed or tickets closed. We measure it by whether your product is growing, your users are returning, and your team is proud of what got shipped.',
               ].map((para, i) => (
                 <p data-mission-text key={i} className="text-lg leading-relaxed md:text-xl"
@@ -415,7 +415,7 @@ export default function MissionPage() {
               </p>
               <p className="mt-2 text-xs font-bold uppercase tracking-[0.35em]"
                 style={{ color: 'rgba(249,92,75,0.7)' }}>
-                — TECHFEXIOUS
+                — NexaTech Networks
               </p>
             </div>
           </div>

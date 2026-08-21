@@ -128,7 +128,7 @@ export function Loader() {
             TF
           </span>
           <span className="font-sans text-xl font-semibold tracking-wide text-white">
-            TECHFEXIOUS
+            NEXATECH NETWORKS
           </span>
         </div>
 

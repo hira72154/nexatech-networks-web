@@ -22,7 +22,7 @@ export function Footer() {
               className="font-sans text-lg font-bold tracking-[0.2em]"
               style={{ color: 'var(--color-paper)' }}
             >
-              TECHFEXIOUS
+              NexaTech Networks
             </span>
             <span
               className="font-serif text-base italic"
@@ -63,11 +63,11 @@ export function Footer() {
           </FooterCol>
 
           <FooterCol title="Contact Us">
-            <a href="mailto:hello@techfexious.com" data-cursor className="footer-link">hello@techfexious.com</a>
-            <a href="tel:+15551234567" data-cursor className="footer-link">+1 (555) 123-4567</a>
+            <a href="mailto:info@NexaTechnetworks.com" data-cursor className="footer-link">info@NexaTechnetworks.com</a>
+            <a href="tel:+921234567890" data-cursor className="footer-link">+92 (123) 456-7890</a>
             <div className="mt-4 flex flex-col gap-1 footer-link pointer-events-none opacity-60">
-              <span>123 Tech Avenue</span>
-              <span>San Francisco, CA 94107</span>
+              <span>Johar Town</span>
+              <span>Lahore, Pakistan</span>
             </div>
           </FooterCol>
 
@@ -103,7 +103,7 @@ export function Footer() {
           className="mt-16 flex flex-col gap-6 border-t pt-8 text-sm md:flex-row md:items-center md:justify-between"
           style={{ borderColor: 'rgba(246,244,241,0.08)', color: 'rgba(246,244,241,0.4)' }}
         >
-          <span>© {new Date().getFullYear()} TECHFEXIOUS. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} NexaTech Networks. All rights reserved.</span>
 
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="footer-link">Privacy Policy</Link>

@@ -473,7 +473,7 @@ export function Hero({ startDelay = 0 }: { startDelay?: number }) {
                   '0 2px 10px rgba(0,0,0,0.5)',
               }}
             >
-              Techfexious is a premium technology studio.
+              NexaTech Networks is a premium technology studio.
               We pair sharp engineering with editorial design
               to build products that scale — calmly,
               confidently, and with craft.

@@ -58,7 +58,7 @@ export function About() {
                 className="mt-8 max-w-md text-lg leading-relaxed"
                 style={{ color: 'var(--color-muted)' }}
               >
-                TECHFEXIOUS began with a simple conviction: technology is only as good as the skill behind it. We came together from design studios, engineering teams and research labs to build a studio that treats every project as a piece of craft.
+                NexaTech Networks began with a simple conviction: technology is only as good as the skill behind it. We came together from design studios, engineering teams and research labs to build a studio that treats every project as a piece of craft.
               </p>
             </Reveal>
 

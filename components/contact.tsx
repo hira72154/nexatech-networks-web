@@ -59,7 +59,7 @@ export function Contact() {
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
             <a
-              href="mailto:hello@techfexious.com"
+              href="mailto:info@NexaTechnetworks.com"
               data-cursor
               className="rounded-full border px-8 py-4 text-sm font-medium transition-all hover:border-white/40"
               style={{
@@ -67,7 +67,7 @@ export function Contact() {
                 color: '#000000',
               }}
             >
-              hello@techfexious.com
+              info@NexaTechnetworks.com
             </a>
           </div>
         </Reveal>

@@ -112,7 +112,7 @@ export function Navbar({ delay = 0 }: { delay?: number }) {
                   <div className="relative z-10 flex shrink-0 items-center">
                     <Link
                       href="/"
-                      aria-label="TechFexious home"
+                      aria-label="NexaTech Networks home"
                       className="group flex h-12 items-center overflow-hidden rounded-full px-1.5 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:pr-5"
                     >
                       {/* Logo */}
