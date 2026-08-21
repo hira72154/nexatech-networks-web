@@ -159,11 +159,11 @@ export default function TeamPage() {
 
             <Reveal delay={0.1} y={30}>
               <p className="mt-16 max-w-xl text-sm leading-7 text-black/50">
-                I&apos;m a{' '}
+                We are{' '}
                 <span className="font-medium text-black">
                   purpose-driven
                 </span>{' '}
-                product designer focused on delivering meaningful,
+                Product Engineers focused on delivering meaningful,
                 high-quality digital solutions that resonate with
                 users.
               </p>

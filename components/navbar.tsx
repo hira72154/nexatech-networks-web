@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   ChevronDown,
   MessageSquare,
@@ -109,35 +110,31 @@ export function Navbar({ delay = 0 }: { delay?: number }) {
                   {/* LOGO */}
                   {/* ================================================= */}
 
-                  <div className="relative z-10 flex shrink-0 items-center">
+                  <div className="relative z-10 flex shrink-0 items-center -ml-2">
                     <Link
                       href="/"
                       aria-label="NexaTech Networks home"
-                      className="group flex h-12 items-center overflow-hidden rounded-full px-1.5 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:pr-5"
+                      className="group flex h-12 items-center overflow-hidden rounded-full px-2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:pr-5"
                     >
-                      {/* Logo */}
+                      {/* Logo image */}
                       <span
                         className="
                           relative
-                          flex h-10 w-10 shrink-0
+                          flex h-14 w-14 shrink-0
                           items-center justify-center
                           overflow-hidden
                           rounded-full
-                          border border-white/40
-                          text-xs font-bold
-                          tracking-tight text-white
-                          shadow-[0_4px_15px_rgba(249,92,75,0.35),inset_0_1px_0_rgba(255,255,255,0.35)]
                           transition-all duration-500
                           group-hover:scale-[0.92]
                         "
-                        style={{ backgroundColor: 'var(--color-coral)' }}
                       >
-                        {/* Logo shine */}
-                        <span className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
-
-                        <span className="relative z-10">
-                          N
-                        </span>
+                        <Image
+                          src="/Nexatech.png"
+                          alt="NexaTech Networks logo"
+                          fill
+                          className="object-contain"
+                          priority
+                        />
                       </span>
 
                       {/* Company name */}
@@ -154,7 +151,7 @@ export function Navbar({ delay = 0 }: { delay?: number }) {
                           transition-all
                           duration-500
                           ease-[cubic-bezier(0.22,1,0.36,1)]
-                          group-hover:max-w-[150px]
+                          group-hover:max-w-[160px]
                           group-hover:pl-3
                           group-hover:opacity-100
                         "
