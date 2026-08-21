@@ -24,6 +24,9 @@ const instrument = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: 'NexaTech Networks — Skill. Solution. Scale.',
+   icons: {
+    icon: '/favicon.ico',
+  },
   description:
     'NexaTech Networks is a premium technology studio building skill into every solution — design, development, AI, cloud and growth.',
   generator: 'v0.app',
