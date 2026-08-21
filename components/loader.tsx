@@ -125,7 +125,13 @@ export function Loader() {
             className="flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold tracking-tight shadow-lg"
             style={{ backgroundColor: '#F95C4B', color: '#fff' }}
           >
-            TF
+            <Image
+              src="/Nexatech.png"
+              alt="NexaTech Networks logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </span>
           <span className="font-sans text-xl font-semibold tracking-wide text-white">
             NEXATECH NETWORKS
