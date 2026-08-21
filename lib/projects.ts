@@ -23,7 +23,7 @@ export const projects: Project[] = [
     title: 'NCDG',
     category: 'Real Estate Management',
     year: '2024',
-    image: '/work/ncdg.png',
+    image: '/work/NCDG.png',
     summary:
       'A centralized real estate and property management platform built to streamline property operations across multiple U.S. states.',
     overview:
