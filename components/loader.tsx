@@ -2,6 +2,7 @@
 
 import { useLayoutEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
+import Image from 'next/image'
 
 export function Loader() {
   const root = useRef<HTMLDivElement>(null)
@@ -122,7 +123,7 @@ export function Loader() {
         {/* TF badge + wordmark */}
         <div className="loader-mark flex items-center gap-3 z-10">
           <span
-            className="flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold tracking-tight shadow-lg"
+            className="relative flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold tracking-tight shadow-lg"
             style={{ backgroundColor: '#F95C4B', color: '#fff' }}
           >
             <Image
