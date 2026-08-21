@@ -1,0 +1,292 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------ */
+/*  TECHFEXIOUS — Design tokens                                        */
+/* ------------------------------------------------------------------ */
+@theme inline {
+  --font-sans: var(--font-manrope), 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), 'Instrument Serif', ui-serif, Georgia, serif;
+
+  /* Core palette */
+  --color-paper: #F6F4F1;
+  --color-stone: #E4DED2;
+  --color-coral: #F95C4B;
+  --color-black: #000000;
+
+  /* Semantic tokens */
+  --color-background: var(--color-paper);
+  --color-foreground: var(--color-black);
+  --color-surface: var(--color-paper);
+  --color-border: color-mix(in oklab, var(--color-black) 12%, transparent);
+  --color-muted: color-mix(in oklab, var(--color-black) 45%, transparent);
+
+  /* Legacy aliases — kept so any missed token refs still resolve reasonably */
+  --color-accent: var(--color-coral);
+  --color-accent-soft: var(--color-coral);
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+:root {
+  color-scheme: light;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-color: var(--color-paper);
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-black);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-coral);
+    color: var(--color-paper);
+  }
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Subtle grid lines on Paper bg */
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, color-mix(in oklab, #E4DED2 35%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, #E4DED2 35%, transparent) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .noise {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Stone-tinted glass — used on light Paper sections */
+  .glass {
+    background: color-mix(in oklab, #E4DED2 20%, transparent);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid color-mix(in oklab, #E4DED2 40%, transparent);
+  }
+
+  /* Paper-based glass — contact modal */
+  .glass-light {
+    background: color-mix(in oklab, #F6F4F1 88%, transparent);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid color-mix(in oklab, #E4DED2 60%, transparent);
+  }
+
+  .glass-white {
+    background: color-mix(in oklab, #ffffff 65%, transparent);
+    backdrop-filter: blur(24px) saturate(150%);
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    border: 1px solid color-mix(in oklab, #ffffff 80%, transparent);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Enhanced glassmorphism for dropdown menus */
+  .glass-dropdown {
+    background: linear-gradient(135deg,
+        rgba(246, 244, 241, 0.90),
+        rgba(228, 222, 210, 0.75));
+    backdrop-filter: blur(32px) saturate(180%);
+    -webkit-backdrop-filter: blur(32px) saturate(180%);
+    border: 1px solid rgba(228, 222, 210, 0.85);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      0 8px 32px rgba(0, 0, 0, 0.10),
+      0 0 1px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Navbar pill — dark frosted glass that reads well over
+     both the cinematic hero and light Paper sections */
+  .glass-panel {
+    background: color-mix(in oklab, #000000 58%, transparent);
+    backdrop-filter: blur(22px) saturate(170%);
+    -webkit-backdrop-filter: blur(22px) saturate(170%);
+    border: 1px solid color-mix(in oklab, #F6F4F1 16%, transparent);
+    box-shadow:
+      0 1px 0 0 color-mix(in oklab, #F6F4F1 12%, transparent) inset,
+      0 18px 50px -18px rgba(0, 0, 0, 0.65);
+  }
+
+  .cglass-panel {
+    position: relative;
+    background: rgba(17, 17, 17, 0.26);
+    background-image: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.05) 26%,
+        rgba(255, 255, 255, 0.02) 55%,
+        rgba(249, 92, 75, 0.06));
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.18),
+      0 18px 45px -20px rgba(10, 10, 15, 0.9),
+      0 0 0 1px rgba(255, 255, 255, 0.03);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(24px) saturate(180%);
+    overflow: hidden;
+  }
+
+  .cglass-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.18) 35%,
+        transparent 60%);
+    transform: translateX(-120%);
+    transition: transform 0.8s ease;
+    pointer-events: none;
+  }
+
+  .cglass-panel:hover::before,
+  .cglass-panel:focus-within::before {
+    transform: translateX(120%);
+  }
+
+  .menu-pop {
+    transform-origin: top center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -8px) scale(0.97);
+    pointer-events: none;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+      visibility 0.3s;
+  }
+
+  .menu-pop[data-open='true'] {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0) scale(1);
+    pointer-events: auto;
+  }
+
+  /* animated underline for nav links — coral */
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background: var(--color-coral);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .nav-link:hover::after,
+  .nav-link[data-active='true']::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Coral Scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-paper);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-coral);
+    border-radius: 6px;
+    border: 2px solid var(--color-paper);
+    transition: background 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in oklab, var(--color-coral) 80%, #000000);
+  }
+
+  /* Firefox Scrollbar */
+  * {
+    scrollbar-color: var(--color-coral) var(--color-paper);
+    scrollbar-width: thin;
+  }
+}
+
+/* Cursor-follow mask reveal (used by MaskRevealText) */
+.mask {
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: 40px;
+  -webkit-mask-size: 40px;
+  mask-image: url('/cursor.svg');
+  -webkit-mask-image: url('/cursor.svg');
+}
+
+/* Custom cursor: hide native on desktop pointer devices */
+@media (hover: hover) and (pointer: fine) {
+
+  .cursor-hidden,
+  .cursor-hidden * {
+    cursor: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
