@@ -24,8 +24,9 @@ export function Laptop({
           src={src || '/placeholder.svg'}
           alt={alt}
           fill
+          unoptimized
           sizes="(max-width: 768px) 90vw, 55vw"
-          className="object-contain object-center"
+          className="object-cover object-top"
           style={{ backgroundColor: '#000000' }}
           priority={priority}
         />

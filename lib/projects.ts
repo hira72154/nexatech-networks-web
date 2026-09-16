@@ -18,122 +18,111 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: 'ncdg',
+    slug: 'rapidstart',
     index: '01',
-    title: 'NCDG',
-    category: 'Real Estate Management',
-    year: '2024',
-    image: '/work/NCDG.png',
-    summary:
-      'A centralized real estate and property management platform built to streamline property operations across multiple U.S. states.',
-    overview:
-      'The platform was designed around a structured owner-property-unit-tenant hierarchy, providing centralized operational and financial visibility while automating repetitive property management workflows.',
-    requirement:
-      'Bring property owners, properties, units, tenants, leases, billing, maintenance, compliance, and reporting into a unified digital platform.',
+    title: 'RAPIDSTART',
+    category: 'AI Automation Platform',
+    year: '2025',
+    image: '/work/rapidstart.png',
+    summary: 'An AI business automation platform that turns a business idea into a guided, automated launch workflow.',
+    overview: "RapidStart helps founders move from idea to operating business through API-driven product workflows backed by AI. The platform combines structured business logic with LLM-powered automation and retrieval, so guidance and generated output stay grounded in the user's actual business context rather than generic model responses.",
+    requirement: "Build a production platform where AI output is structured, context-aware and safely integrated into product workflows.",
     challenges: [
-      'Multi-state property management architecture.',
-      'Automated recurring rent and late-fee billing.',
-      'AI-assisted payment risk monitoring.',
+      "Business launch guidance is high-context work.",
+      "A generic chatbot can't answer well as useful answers depend on user's own data and stage.",
+      "The platform needed AI output that was structured, reliable and connected to real application state."
     ],
     solutions: [
-      'Centralized operational and financial visibility.',
-      'Automating repetitive property management workflows.',
-      'Predictive flags for potential late payments.',
+      "Backend services and AI-powered automation workflows across the product.",
+      "Retrieval-backed functionality using embeddings and PostgreSQL/pgvector for context.",
+      "Agentic workflows built with LangChain and LangGraph handled structured outputs.",
+      "Long-running AI operations ran as background pipelines with retry and failure handling."
     ],
     features: [
-      'Property owner and portfolio management',
-      'Property, unit, and occupancy tracking',
-      'Tenant and lease management',
-      'Automated recurring rent and late-fee billing',
-      'Tenant ledgers and payment tracking',
-      'Maintenance and work-order management',
-      'Maintenance scheduling and vendor cost tracking',
-      'AI-assisted payment risk monitoring',
-      'Predictive flags for potential late payments and maintenance bottlenecks',
-      'Automated legal and compliance notice generation',
-      'Centralized financial and operational reporting',
-      'Portfolio-level analytics and insights',
-      'Multi-state property management architecture',
-      'Role-based operational workflows',
+      "API-driven product workflows",
+      "LLM-powered automation and retrieval",
+      "Agentic workflows with LangChain and LangGraph",
+      "Background pipelines with retry and failure handling",
+      "CI/CD deployment through GitHub Actions"
     ],
     results: [
-      { value: 'AI', label: 'Risk Monitoring' },
-      { value: 'SaaS', label: 'Architecture' },
-      { value: 'Automated', label: 'Workflows' },
+      { value: 'AI', label: 'Automation' },
+      { value: 'RAG', label: 'Retrieval' },
+      { value: 'LLM', label: 'Integration' }
     ],
-    stack: [
-      'Full-Stack Web Development',
-      'AI Integration',
-      'Property Management Systems',
-      'Financial Automation',
-      'Predictive Analytics',
-      'Workflow Automation',
-      'Payment Systems',
-      'REST APIs',
-      'Database Architecture',
-      'Reporting Dashboards',
-      'Role-Based Access Control',
-      'Scalable SaaS Architecture',
-    ],
+    stack: ['Python', 'Django REST Framework', 'FastAPI', 'Next.js', 'NestJS', 'PostgreSQL', 'pgvector', 'LangChain', 'LangGraph', 'RAG', 'AWS', 'LLM APIs'],
+    website: 'https://rapidstart.net/'
   },
   {
-    slug: 'alyve',
+    slug: 'pcm-savings',
     index: '02',
-    title: 'ALYVE',
-    category: 'Health & Wellness',
+    title: 'PCM SAVINGS',
+    category: 'Healthcare Platform',
     year: '2024',
-    image: '/work/alyve.png',
-    summary:
-      'A personalized health and wellness e-commerce platform built on Shopify, connecting health assessments and nutritional insights with tailored vitamin and supplement recommendations.',
-    overview:
-      'The platform was designed to simplify the customer journey from health assessment to personalized recommendations and purchase, while maintaining a fast, responsive, and conversion-focused storefront.',
-    requirement:
-      'Connect health assessments and nutritional insights with tailored vitamin and supplement recommendations.',
+    image: '/work/pcmsavings.png',
+    summary: 'An enterprise healthcare benefits platform for prescription care management.',
+    overview: 'PCM Savings delivers prescription care management for enterprise healthcare clients. The work covered backend services, REST APIs and reporting features supporting high-volume healthcare data and the operational modules teams rely on day to day.',
+    requirement: 'Ensure modules stay fast and accurate under enterprise data volumes while remaining maintainable as requirements changed.',
     challenges: [
-      'Optimized quiz-to-checkout customer journey.',
-      'Dynamic product recommendation interface.',
-      'Performance-optimized storefront assets.',
+      'Healthcare benefits data is large, sensitive and reporting-heavy.',
+      'Modules had to stay fast and accurate under enterprise data volumes while remaining maintainable as requirements changed.'
     ],
     solutions: [
-      'Interactive health quiz and personalization flow.',
-      'Blood testing and results experience.',
-      'Personalized supplement recommendations.',
+      'Development and enhancement of enterprise healthcare modules, REST API endpoints and backend services.',
+      'Reporting features built on PostgreSQL and ClickHouse for analytical queries.',
+      'Frontend features in React.js consumed those APIs and surfaced the data to end users.'
     ],
     features: [
-      'Interactive health quiz and personalization flow',
-      'Blood testing and results experience',
-      'Personalized supplement recommendations',
-      'Dynamic health insights and content rendering',
-      'Custom Shopify theme components',
-      'Conversion-focused product pages',
-      'Mobile-first responsive storefront',
-      'Optimized quiz-to-checkout customer journey',
-      'Dynamic product recommendation interface',
-      'Performance-optimized storefront assets',
-      'Streamlined Shopify checkout experience',
+      'Enterprise healthcare modules',
+      'REST API endpoints and backend services',
+      'Reporting features for analytical queries',
+      'Frontend integration with React.js'
     ],
     results: [
-      { value: 'Shopify', label: 'Custom Theme' },
-      { value: 'Dynamic', label: 'Recommendations' },
-      { value: 'Mobile', label: 'Optimized' },
+      { value: 'FastAPI', label: 'Backend' },
+      { value: 'React.js', label: 'Frontend' },
+      { value: 'ClickHouse', label: 'Analytics' }
     ],
-    stack: [
-      'Shopify',
-      'Custom Theme Development',
-      'E-commerce Development',
-      'JavaScript',
-      'Responsive UI/UX',
-      'Dynamic Content',
-      'Product Recommendation Systems',
-      'Mobile Optimization',
-      'Performance Optimization',
-      'Conversion-Focused Design',
-      'Frontend Development',
+    stack: ['FastAPI', 'React.js', 'Node.js', 'ClickHouse', 'PostgreSQL'],
+    website: 'https://www.pcmsavings.com/'
+  },
+  {
+    slug: 'vivup',
+    index: '03',
+    title: 'VIVUP',
+    category: 'Employee Benefits Platform',
+    year: '2023',
+    image: '/work/vivup.png',
+    summary: 'A UK-based employee benefits platform serving large organisations and their workforces.',
+    overview: 'Vivup provides employee benefits, wellbeing and salary-sacrifice schemes to UK employers. The work focused on feature development, backend enhancements, performance improvements and production support on an established, high-traffic codebase.',
+    requirement: 'Deliver features and backend enhancements on a mature multi-service platform without destabilising existing workflows.',
+    challenges: [
+      'A mature multi-service platform with real users.',
+      'New features had to land without destabilising existing workflows.',
+      'Slow paths had to be found and fixed in a live system.'
     ],
+    solutions: [
+      'Feature development and backend enhancements across the Rails application and supporting services.',
+      'Database and query-level performance improvements in PostgreSQL.',
+      'Ongoing production support including investigation and resolution of live issues.'
+    ],
+    features: [
+      'Employee benefits, wellbeing and salary-sacrifice schemes',
+      'Feature development and backend enhancements',
+      'Database and query-level performance improvements',
+      'Production support and live issue resolution'
+    ],
+    results: [
+      { value: 'Rails', label: 'Backend' },
+      { value: 'React.js', label: 'Frontend' },
+      { value: 'PostgreSQL', label: 'Database' }
+    ],
+    stack: ['Ruby on Rails', 'React.js', 'Node.js', 'Go', 'PostgreSQL'],
+    website: 'https://vivup.co.uk/'
   },
   {
     slug: 'sanso',
-    index: '03',
+    index: '04',
     title: 'nexatechsanso',
     category: 'E-Commerce',
     year: '2024',
@@ -183,45 +172,7 @@ export const projects: Project[] = [
       'Shopping Cart Systems',
       'Order Management',
     ],
-  },
-  {
-    slug: 'groweo',
-    index: '04',
-    title: 'Groweo',
-    category: 'SaaS Platform & AI',
-    year: '2024',
-    image: '/work/groweo.png',
-    summary:
-      'A SaaS platform designed to transform static websites into automated growth engines through real-time visitor engagement and AI-driven workflows.',
-    overview:
-      'Groweo is a powerful growth and automation platform. I contributed to the core platform architecture and automation systems that capture visitor behavior, process engagement events, and trigger configurable workflows seamlessly across multiple client websites.',
-    requirement:
-      'Design and build a scalable, multi-tenant SaaS architecture capable of real-time event processing, interactive engagement, and complex AI automation.',
-    challenges: [
-      'Architecting a scalable event-processing system for real-time visitor tracking.',
-      'Building a flexible workflow and automation engine that supports complex logic.',
-      'Ensuring seamless, lightweight integration across multiple client websites without impacting performance.',
-    ],
-    solutions: [
-      'Developed a performance-focused backend system to handle high-throughput event processing.',
-      'Created an intuitive workflow builder to orchestrate AI-driven engagement and lead capture.',
-      'Implemented centralized analytics and reporting for unified client management.',
-    ],
-    features: [
-      'Real-time visitor tracking and behavioral analytics',
-      'AI-driven engagement and automation workflows',
-      'Interactive engagement widgets',
-      'Workflow and automation builder',
-      'Lead capture and conversion tools',
-      'Centralized analytics and reporting dashboard',
-      'Multi-client website integration',
-    ],
-    results: [
-      { value: 'AI', label: 'Driven Workflows' },
-      { value: 'SaaS', label: 'Automation Engine' },
-      { value: 'Real-time', label: 'Event Processing' },
-    ],
-    stack: ['SaaS Architecture', 'Real-Time APIs', 'AI Automation', 'Database Management', 'Workflow Engineering'],
+    website: 'https://nexatech-sanso.com/',
   },
   {
     slug: 'waytoprime',
@@ -262,6 +213,7 @@ export const projects: Project[] = [
       { value: 'API', label: 'Backend Architecture' },
     ],
     stack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Python', 'HTML5/CSS3', 'REST APIs'],
+    website: 'https://www.waytoprime.com/',
   },
   {
     slug: 'radisist',
@@ -270,7 +222,7 @@ export const projects: Project[] = [
     category: 'Healthcare & AI',
     year: '2025',
     image: '/work/radisist.png',
-    website: 'https://radisist.com',
+    website: 'https://radisist.com/',
     summary:
       'An AI-assisted mammography platform designed to support radiologists in the detection and analysis of breast abnormalities.',
     overview:

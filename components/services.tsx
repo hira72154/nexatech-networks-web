@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
 const services = [
   {
@@ -93,6 +95,16 @@ export function Services() {
             We bring specialised craft to every layer of your product — and we
             hold all of it to the same bar: skill.
           </p>
+
+          <div className="mt-8">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 rounded-full border border-black/20 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all hover:bg-black hover:text-white"
+              style={{ color: 'var(--color-black)' }}
+            >
+              Explore All Services <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
 
           <div className="mt-10 hidden gap-1.5 md:flex">
             {services.map((s, i) => (

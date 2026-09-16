@@ -11,7 +11,7 @@ function Card({ project }: { project: Project }) {
       className="group relative block h-full w-full overflow-hidden rounded-none transition-all duration-500 hover:rounded-[60px] lg:w-1/2"
     >
       <img
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
         src={project.image}
         alt={project.title}
       />

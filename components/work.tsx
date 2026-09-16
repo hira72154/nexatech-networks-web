@@ -114,18 +114,32 @@ export function Work() {
                 >
                   {p.summary}
                 </p>
-                <Link
-                  href={`/work/${p.slug}`}
-                  data-cursor="View"
-                  className="group mt-8 inline-flex w-fit items-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium transition-transform hover:-translate-y-0.5"
-                  style={{
-                    backgroundColor: '#000000',
-                    color: '#ffffff',
-                  }}
-                >
-                  View Case Study
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
+                <div className="mt-8 flex flex-wrap items-center gap-3">
+                  <Link
+                    href={`/work/${p.slug}`}
+                    data-cursor="View"
+                    className="group inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium transition-transform hover:-translate-y-0.5"
+                    style={{
+                      backgroundColor: '#000000',
+                      color: '#ffffff',
+                    }}
+                  >
+                    View Case Study
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </Link>
+                  {p.website && (
+                    <a
+                      href={p.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-cursor="Live"
+                      className="group inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-3.5 text-sm font-medium text-white transition-all hover:bg-white hover:text-black hover:-translate-y-0.5"
+                    >
+                      Visit Website
+                      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </a>
+                  )}
+                </div>
               </div>
 
               <Link

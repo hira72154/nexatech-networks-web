@@ -231,6 +231,7 @@ export function Hero({ startDelay = 0 }: { startDelay?: number }) {
   return (
     <section
       ref={root}
+      id="hero"
       className="relative flex min-h-screen w-full items-center justify-center px-1.5 py-3 sm:px-2.5 sm:py-4 lg:px-3 lg:py-5"
       style={{
         backgroundColor: 'var(--color-paper)',

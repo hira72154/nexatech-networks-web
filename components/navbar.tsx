@@ -17,15 +17,14 @@ import { useContact } from '@/components/contact-modal'
 const WHO_WE_ARE = [
   { label: 'What makes us different', href: '/difference' },
   { label: 'Mission statement', href: '/mission' },
-  { label: 'What we offer', href: '/offer' },
-  { label: 'Our Team', href: '/team' },
+  { label: 'About', href: '/team' },
 ]
 
 const LINKS = [
-  { label: 'Home', href: '/#top' },
+  { label: 'Home', href: '/#hero' },
   { label: 'About', href: '/#about' },
-  { label: 'Services', href: '/projects' },
-  { label: 'Products', href: '#' },
+  { label: 'Services', href: '/services' },
+  { label: 'Client project', href: '/projects' },
 ]
 
 export function Navbar({ delay = 0 }: { delay?: number }) {
@@ -166,7 +165,7 @@ export function Navbar({ delay = 0 }: { delay?: number }) {
                   {/* ================================================= */}
 
                   <div className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-1 md:flex">
-                    <NavItem href="/#top">
+                    <NavItem href="/#hero">
                       Home
                     </NavItem>
 
@@ -388,15 +387,20 @@ function NavItem({
       if (pathname === targetPath) {
         e.preventDefault()
 
+        const lenis = (window as any).__lenis
         const element = hash
           ? document.getElementById(hash)
           : document.documentElement
 
-        if (element) {
+        if (lenis) {
+          lenis.scrollTo(element || 0, { duration: 1.2 })
+        } else if (element) {
           element.scrollIntoView({
             behavior: 'smooth',
             block: 'start',
           })
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' })
         }
       }
     }

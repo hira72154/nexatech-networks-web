@@ -203,10 +203,11 @@ function CaseStudyInner({
               style={{ color: 'var(--color-black)' }}
             >
               {[
-                { label: 'Client', value: project.title },
-                { label: 'Year', value: project.year },
-                { label: 'Role', value: project.category },
-              ].map(({ label, value }) => (
+                { label: 'Client', value: project.title, href: null },
+                { label: 'Year', value: project.year, href: null },
+                { label: 'Role', value: project.category, href: null },
+                ...(project.website ? [{ label: 'Live Link', value: project.website.replace('https://', '').replace('http://', '').replace(/\/$/, ''), href: project.website }] : []),
+              ].map(({ label, value, href }) => (
                 <span key={label} className="flex flex-col gap-1">
                   <span
                     className="text-[10px] font-bold tracking-[0.3em]"
@@ -214,7 +215,18 @@ function CaseStudyInner({
                   >
                     {label}
                   </span>
-                  {value}
+                  {href ? (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 font-semibold text-black hover:underline"
+                    >
+                      {value} <ArrowUpRight className="h-3 w-3 text-[var(--color-coral)]" />
+                    </a>
+                  ) : (
+                    value
+                  )}
                 </span>
               ))}
             </div>

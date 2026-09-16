@@ -56,7 +56,7 @@ export function Footer() {
 
           <FooterCol title="Services">
             {services.map((s) => (
-              <Link key={s} href="/#services" data-cursor className="footer-link">
+              <Link key={s} href="/services" data-cursor className="footer-link">
                 {s}
               </Link>
             ))}

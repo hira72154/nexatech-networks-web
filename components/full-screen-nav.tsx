@@ -5,12 +5,18 @@ import gsap from 'gsap'
 import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { X } from 'lucide-react'
+import { X, ChevronDown, ArrowRight } from 'lucide-react'
 
 interface FullScreenNavProps {
     open: boolean
     setOpen: (open: boolean) => void
 }
+
+const WHO_WE_ARE = [
+    { label: 'What makes us different', href: '/difference' },
+    { label: 'Mission statement', href: '/mission' },
+    { label: 'About', href: '/team' },
+]
 
 const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
     const router = useRouter()
@@ -18,6 +24,7 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
 
     const fullScreenRef = useRef<HTMLDivElement>(null)
     const [currentTime, setCurrentTime] = useState('')
+    const [dropOpen, setDropOpen] = useState(false)
 
     // Live time
     useEffect(() => {
@@ -43,6 +50,12 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
         e: React.MouseEvent<HTMLAnchorElement>,
         path: string
     ) => {
+        if (!path || path === '#') {
+            e.preventDefault()
+            setOpen(false)
+            return
+        }
+
         e.preventDefault()
         setOpen(false)
 
@@ -58,15 +71,20 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
 
             if (pathname === targetPath) {
                 setTimeout(() => {
-                    const element = document.getElementById(id)
+                    const lenis = (window as any).__lenis
+                    const element = id ? document.getElementById(id) : document.documentElement
 
-                    if (element) {
+                    if (lenis) {
+                        lenis.scrollTo(element || 0, { duration: 1.2 })
+                    } else if (element) {
                         element.scrollIntoView({
                             behavior: 'smooth',
                             block: 'start',
                         })
+                    } else {
+                        window.scrollTo({ top: 0, behavior: 'smooth' })
                     }
-                }, 300)
+                }, 350)
 
                 return
             }
@@ -74,7 +92,7 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
 
         setTimeout(() => {
             router.push(path)
-        }, 300)
+        }, 350)
     }
 
     useGSAP(
@@ -243,24 +261,80 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
                 </div>
 
                 {/* Main Links */}
-                <div className="flex flex-1 flex-col justify-center">
+                <div className="flex flex-1 flex-col justify-center overflow-y-auto my-16 px-4">
 
-                    {/* What We Offer */}
+                    {/* Home */}
                     <div className="link-container origin-top border-t border-black/15">
                         <Link
-                            href="/offer"
+                            href="/#hero"
                             onClick={(e) =>
-                                handleNavClick(e, '/offer')
+                                handleNavClick(e, '/#hero')
                             }
                             className="block w-full"
                         >
-                            <h1 className="nav-title py-2.5 text-center font-sans text-4xl font-medium uppercase leading-none tracking-tighter lg:py-3 lg:text-[6vw]">
-                                What we offer
+                            <h1 className="nav-title py-2 text-center font-sans text-3xl font-medium uppercase leading-none tracking-tighter sm:text-4xl lg:py-3 lg:text-[5vw]">
+                                Home
                             </h1>
                         </Link>
                     </div>
 
-                    {/* Culture */}
+                    {/* Who We Are */}
+                    <div className="link-container origin-top border-t border-black/15">
+                        <button
+                            type="button"
+                            onClick={() => setDropOpen((prev) => !prev)}
+                            className="flex w-full items-center justify-center gap-3 py-2 text-center font-sans text-3xl font-medium uppercase leading-none tracking-tighter text-black transition-colors hover:text-white sm:text-4xl lg:py-3 lg:text-[5vw]"
+                            aria-expanded={dropOpen}
+                        >
+                            <span>Who we are</span>
+                            <ChevronDown
+                                size={24}
+                                strokeWidth={2}
+                                className={`transition-transform duration-300 ${
+                                    dropOpen ? 'rotate-180' : ''
+                                }`}
+                            />
+                        </button>
+
+                        {/* Dropdown Items */}
+                        <div
+                            className={`grid transition-all duration-300 ease-in-out ${
+                                dropOpen ? 'grid-rows-[1fr] opacity-100 py-3' : 'grid-rows-[0fr] opacity-0 py-0'
+                            } overflow-hidden`}
+                        >
+                            <div className="min-h-0 flex flex-col gap-2 px-2 max-w-sm mx-auto w-full">
+                                {WHO_WE_ARE.map((item, i) => (
+                                    <Link
+                                        key={item.label}
+                                        href={item.href}
+                                        onClick={(e) => handleNavClick(e, item.href)}
+                                        className="
+                                            group/item
+                                            flex items-center justify-between
+                                            rounded-xl
+                                            px-4 py-2.5
+                                            text-sm font-medium
+                                            bg-black/10 hover:bg-black/25 text-black hover:text-white
+                                            transition-all duration-200
+                                        "
+                                    >
+                                        <span className="flex items-center gap-3">
+                                            <span className="font-mono text-xs opacity-60">
+                                                0{i + 1}
+                                            </span>
+                                            {item.label}
+                                        </span>
+                                        <ArrowRight
+                                            size={16}
+                                            className="-translate-x-1 opacity-60 transition-all duration-300 group-hover/item:translate-x-0 group-hover/item:opacity-100"
+                                        />
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* About */}
                     <div className="link-container origin-top border-t border-black/15">
                         <Link
                             href="/#about"
@@ -269,8 +343,8 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
                             }
                             className="block w-full"
                         >
-                            <h1 className="nav-title py-2.5 text-center font-sans text-4xl font-medium uppercase leading-none tracking-tighter lg:py-3 lg:text-[6vw]">
-                                Culture
+                            <h1 className="nav-title py-2 text-center font-sans text-3xl font-medium uppercase leading-none tracking-tighter sm:text-4xl lg:py-3 lg:text-[5vw]">
+                                About
                             </h1>
                         </Link>
                     </div>
@@ -278,29 +352,29 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
                     {/* Services */}
                     <div className="link-container origin-top border-t border-black/15">
                         <Link
-                            href="/#services"
+                            href="/services"
                             onClick={(e) =>
-                                handleNavClick(e, '/#services')
+                                handleNavClick(e, '/services')
                             }
                             className="block w-full"
                         >
-                            <h1 className="nav-title py-2.5 text-center font-sans text-4xl font-medium uppercase leading-none tracking-tighter lg:py-3 lg:text-[6vw]">
+                            <h1 className="nav-title py-2 text-center font-sans text-3xl font-medium uppercase leading-none tracking-tighter sm:text-4xl lg:py-3 lg:text-[5vw]">
                                 Services
                             </h1>
                         </Link>
                     </div>
 
-                    {/* Work */}
+                    {/* Client project */}
                     <div className="link-container origin-top border-y border-black/15">
                         <Link
-                            href="/#work"
+                            href="/projects"
                             onClick={(e) =>
-                                handleNavClick(e, '/#work')
+                                handleNavClick(e, '/projects')
                             }
                             className="block w-full"
                         >
-                            <h1 className="nav-title py-2.5 text-center font-sans text-4xl font-medium uppercase leading-none tracking-tighter lg:py-3 lg:text-[6vw]">
-                                Work
+                            <h1 className="nav-title py-2 text-center font-sans text-3xl font-medium uppercase leading-none tracking-tighter sm:text-4xl lg:py-3 lg:text-[5vw]">
+                                Client project
                             </h1>
                         </Link>
                     </div>
